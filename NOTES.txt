@@ -6,3 +6,25 @@
 3] within design folder make directory called `HTML Templates` and put all html & css files within it 
 4] within E-commerce folder create file `index.php`
 5] copy the cpntent of `index.html` into the `index.php`
+
+
+
+
+
+=>> Close Connection Database when open it such that
+    public function __destruct()
+    {
+        $this->closeConnection();
+    }
+
+    // close connection if it is valid
+    protected function closeConnection()
+    {
+        if($this->conn != null)
+        {
+            $this->conn->close();
+            $this->conn = null;
+        }
+    }
+
+-> explain code >->> when there is valid connection will execute at destruct
