@@ -1,0 +1,100 @@
+--------<><><><>---------
+--- install SASS --------
+--------<><><><>---------
+-  first initialize npm -> npm init -> to get the package.json file
+-  then -> npm i -g sass -> to install sass
+- create folder called `sass` and within it create file `style.scss`
+- path file to the package.json
+-->> this steps to make npm compile sass files to css files
+-->> flag `--watch` to tell npm server if any changes occure in .scss file compile it to css file
+
+
+
+--------<><><><>----------------
+--- How to make slider  --------
+---------<><><><>---------------
+->> Slider Using owl-carouser
+ - first install or import `owl-carouser` in your project
+ - make div that with class `owl-carouser owl-theme`
+ - within `div.owl-carouser` but make div for each image with class `item`
+ - thin within root folder make js file called `index.js` and import in index.html
+ =>> make sure you have links of owl-carousal in index.html where owl-carousal have 
+    css links and js links
+--> Example
+# html
+    <main id="main-site">
+      <!-- start owl carusor -->
+       <section id="banner-area">
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <img src="./assets/Banner1.png" alt="Banner 1">
+          </div>
+          <div class="item">
+            <img src="./assets/Banner2.png" alt="Banner 2">
+          </div>
+        </div>
+       </section>
+      <!-- ! start owl carusor -->
+    </main>
+# js
+// active owl-carouser
+$(document).ready(function(){
+    $('#banner-area .owl-carousel').owlCarousel({
+        dots: true,
+        items: 1
+    });
+})
+# additonal notes
+ - class `owl-carousel` that init the slider
+ - class `owl-theme` that specify default theme of that carousel
+ ->> when you use image and if you that image responsive use class `img-fluid`
+ ->> there are option in owlCarousel function that appeare navigation button "nav: true"
+ ->> there are option in owlCarousel function that make resposive items that appear in different screen 
+      responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
+            }
+        }
+->> class `text-warning` used to make the color golden
+
+
+
+---------------------<><><><>------------------------------
+--- How to filter elements using `isotope plugin`  --------
+---------------------<><><><>------------------------------
+-->> by using plugin isotope you can filter elements with easy way
+->> step to use `isotope` to filter data
+==>>==>> First HTML Structure
+1] you should have div#filters that contain all buttons when click on it that will filter items such that
+        <div id="filters" class="button-group text-right">
+            <button class="btn is-checked" data-filter="*">All Brands</button>
+            <button class="btn" data-filter=".Apple">Apple</button>
+            <button class="btn" data-filter=".Samsung">Samsung</button>
+            <button class="btn" data-filter=".Readmi">Readmi</button>
+        </div>
+2] also you should hav div.grid that contains element that you will filter, and within div.grid it have elements
+    with `div.grid-item.ClassNameToFilter` 
+        <div class="grid">
+            <div class="grid-item Apple border"></div>
+        </div>
+==>>==>> Second JS Logig
+1] on event `ready` for document start write logic
+2] first step is initialize isotope , on this init we initialize the area that contain all elements contained in
+    , in our case is `div.grid`, also specify the element that will filtered , in this case is `div.grid-item`
+    let $grid = $('.grid').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows'
+    });
+3] binding the value of `data-value` attribute with the match elements in area and display it when click on btn
+    $('#filters').on('click', 'button', function (){
+        let valueClass = $(this).attr('data-filter');
+        $grid.isotope({
+            filter: valueClass
+        });
+    });

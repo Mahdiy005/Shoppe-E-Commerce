@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+/* sass Templates */
+button, button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none;
+}
+
+/* Typography class */
+.font-baloo {
+  font-family: "Baloo Thambi 2", system-ui;
+}
+
+.font-rale {
+  font-family: "Raleway", cursive;
+}
+
+.font-rubic {
+  font-family: "Rubik", cursive;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-18 {
+  font-size: 16px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+/* template css */
+.primary-color {
+  color: #003859;
+}
+
+.primary-color-bg {
+  background-color: #003859;
+}
+
+.secondary-color {
+  color: #00A5C4;
+}
+
+.secondary-color-bg {
+  background-color: #00A5C4;
+}
+
+.yellow-color {
+  color: #FFD289;
+}
+
+.yellow-color-bg {
+  background-color: #FFD289;
+}
+
+.bg-gold {
+  background-color: gold !important;
+}
+
+/*Top Carousel Template */
+#top-sale .owl-carousel .item .product > a {
+  overflow: hidden;
+}
+#top-sale .owl-carousel .item .product > a > img {
+  transition: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  -ms-transition: transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+}
+#top-sale .owl-carousel .item .product > a > img:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+#top-sale .owl-carousel .owl-nav {
+  position: absolute !important;
+  top: 30% !important;
+  display: flex !important;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 30px;
+}
+#top-sale .owl-carousel .owl-nav button {
+  margin: 0 -10px !important;
+}
+
+/* special price template */
+#special-price .grid .grid-item {
+  margin: 4px;
+}
+
+/*# sourceMappingURL=style.css.map */

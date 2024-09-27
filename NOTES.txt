@@ -1,0 +1,8 @@
+-------<><><><><><><><><><><><><><><><><><><><>------
+------- How To Convert UI Design Into php files------
+-------<><><><><><><><><><><><><><><><><><><><>------
+1] first create folder in htdocs directory with any name as `Tutoria` 
+2] within `Tutoria` directory add the design that you want toconvert to php 
+3] within design folder make directory called `HTML Templates` and put all html & css files within it 
+4] within E-commerce folder create file `index.php`
+5] copy the cpntent of `index.html` into the `index.php`
