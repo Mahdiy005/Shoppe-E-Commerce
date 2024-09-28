@@ -1,8 +1,7 @@
 <?php 
-// include header
+// header of the site
 require_once './header.php'; 
 ?>
-
        <!-- owl carusor banner -->
        <?php require_once './Templates/_banner-area.php' ?>
        <!-- ! owl carusor banner -->

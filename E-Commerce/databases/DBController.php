@@ -7,34 +7,27 @@ class DBController
     
 
     public function __construct(
+        protected string $driver = 'mysql',
         protected string $serverName = 'localhost',
         protected string $userName = 'root',
         protected string $password = '',
-        protected string $bdname = 'shopee',
-        public ?mysqli $conn = null
+        protected string $dbname = 'shopee',
+        public ?\PDO $conn = null // make this public to access in DI 
     )
     {
-        $conn = new mysqli($serverName, $userName, $password, $bdname);
-        if($this->conn->connect_error)
-        {
-            die('There are erron when you try on db');
+        try {
+            $this->conn = new \PDO("$driver:host=$serverName;dbname=$dbname", $userName, $password, [
+                PDO::ATTR_DEFAULT_FETCH_MODE  => PDO::FETCH_ASSOC
+            ]);
+        } catch (\Throwable $th) {
+            throw $th;
         }
-        echo 'Connected Successfuly';
     }
 
+    // close connection if it is valid where there are no reference to it
     public function __destruct()
     {
-        $this->closeConnection();
-    }
-
-    // close connection if it is valid
-    protected function closeConnection()
-    {
-        if($this->conn != null)
-        {
-            $this->conn->close();
-            $this->conn = null;
-        }
+        $this->conn = null;
     }
 }
 
