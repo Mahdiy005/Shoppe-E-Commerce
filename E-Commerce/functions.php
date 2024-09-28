@@ -7,4 +7,5 @@ $db = new DBController();
 
 $product = new Product($db);
 
-// $product->getData('product');
+// this two variable can access through all project because we include it on header.php
+// so all files in Template Directory can access to this two variable so files can fetch data
