@@ -1,8 +1,9 @@
+<?php $items = $product->getData('product');  shuffle($items)?>
 <section class="container py-5" id="top-sale">
     <h4 class="py-3 border-bottom mb-3 font-size-20 font-rubic">Top Sale</h4>
     <!-- start owl carousel -->
     <div class="owl-carousel owl-theme">
-    <?php foreach($product->getData('product') as $item): ?>
+    <?php foreach($items as $item): ?>
         <div class="item">
             <div class="product font-rale">
             <a href="#"><img src="<?php echo $item['item_image'] ?? '../assets/products/1.png' ?>" alt="product 1" class="img-fluid"></a>
