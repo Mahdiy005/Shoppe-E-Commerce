@@ -1,7 +1,6 @@
 <?php 
-$specialData = $product->getData('product'); 
-
-$brands = array_unique(array_map(function ($item) { return $item['item_brand']; }, $specialData));
+shuffle($items);
+$brands = array_unique(array_map(function ($item) { return $item['item_brand']; }, $items));
 
 sort($brands);
 
@@ -17,7 +16,7 @@ sort($brands);
         </div>
 
         <div class="grid gap-2">
-            <?php foreach($specialData as $item): ?>
+            <?php foreach($items as $item): ?>
                 <div class="grid-item <?php echo $item['item_brand'] ?> border">
                     <div class="item py-2 " style="width: 200px; ">
                     <div class="product font-rale">
