@@ -13,12 +13,14 @@ class Product
     }
 
     // function to fetch products
-    public function getData(string $table)
+    public function getData(string $table): array
     {
         $q = "SELECT * FROM {$table}";
         $result = $this->db->conn->query($q);
-        echo '<pre>';
-        var_dump($result->fetchAll());
-        echo '</pre>';
+        return $result->fetchAll();
+        //<><><><><> for testing <><><><><><>
+        // echo '<pre>';
+        // var_dump($result->fetchAll());
+        // echo '</pre>';
     }
 }
