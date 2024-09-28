@@ -28,3 +28,39 @@
     }
 
 -> explain code >->> when there is valid connection will execute at destruct
+
+
+
+
+-------<><><><><><><><><><><><><><><>------
+------- What Is Dependency Injection-------
+-------<><><><><><><><><><><><><><><>------
+->> is a technique to inject one class to another class, 
+->> after inject you can access all public properties and method of the class to be inject
+->> you can inject in 
+        1] constructor
+        2] setter method
+==>> Example
+class One {
+    public string $var1 = 'Hello from var 1';
+    public function getValue(): string
+    {
+        return $this->var1;
+    }
+}
+
+class Two 
+{
+    public string $var2 = '';
+    // inject class `One` in constructor of class `Two` , 
+    // so here you can access all publick propeties and method of class `One`
+    // access public only
+    public function __constructor(One $class1)
+    {
+        $this->var2 = $class1->var1;
+    }
+}
+
+-->> Usecases of DI 
+  - when you have class that make connection to database and you use another class to insert or update data 
+  in this case rather than use inheritance you can use DI

@@ -44,6 +44,7 @@
       href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+    <!-- include the functions.php that contains all functions that will fetch data frpm DB -->
     <?php require_once './functions.php' ?>
   </head>
 
