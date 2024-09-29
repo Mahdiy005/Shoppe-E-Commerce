@@ -23,4 +23,12 @@ class Product
         // var_dump($result->fetchAll());
         // echo '</pre>';
     }
+
+    // get item with specific id
+    public function getItem(string $table = 'product', int $id) : array
+    {
+        $q = "SELECT * FROM $table WHERE item_id=$id";
+        $result = $this->db->conn->query($q);
+        return $result->fetch();
+    }
 }
