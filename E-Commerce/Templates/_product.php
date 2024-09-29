@@ -1,8 +1,9 @@
 <section class="product">
+    <?php $itemInfo = $product->getItem('product', $_GET['id']); print_r($itemInfo)?>
             <div class="container py-4">
                 <div class="row">
                     <div class="col-sm-6 col-12">
-                        <img src="./assets/products/1.png" alt="product" class="img-fluid">
+                        <img src="<?php echo $itemInfo['item_image'] ?>" alt="product" class="img-fluid">
                         <form class="form-row pt-4 font-size-16 font-baloo">
                             <div class="col">
                                 <button type="submit" class="btn btn-danger form-control">Proceed To Buy</button>
@@ -13,8 +14,8 @@
                         </form>
                     </div>
                     <div class="col-sm-6 col-12">
-                        <h5 class="font-baloo font-size-20">Samsung S6 Edge</h5>
-                        <small>by samsung</small>
+                        <h5 class="font-baloo font-size-20"><?php echo $itemInfo['item_name'] ?></h5>
+                        <small>by <?php echo $itemInfo['item_brand'] ?></small>
                         <div class="d-flex">
                             <div class="rating text-warning font-size-12">
                                 <span><i class="fas fa-star"></i></span>
@@ -34,7 +35,7 @@
                             </tr>
                             <tr class="font-rale font-size-14">
                                 <td class="ml-4">Deal Price : </td>
-                                <td class="text-danger font-size-20">$ <span>152</span><small class="text-dark font-size-12">&nbsp;&nbsp;&nbsp;Inclusiv of all taxes</small></td>
+                                <td class="text-danger font-size-20">$ <span><?php echo $itemInfo['item_price'] ?></span><small class="text-dark font-size-12">&nbsp;&nbsp;&nbsp;Inclusiv of all taxes</small></td>
                             </tr>
                             <tr class="font-rale font-size-14">
                                 <td class="ml-4">You save : </td>

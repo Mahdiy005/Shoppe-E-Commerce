@@ -20,7 +20,7 @@ sort($brands);
                 <div class="grid-item <?php echo $item['item_brand'] ?> border">
                     <div class="item py-2 " style="width: 200px; ">
                     <div class="product font-rale">
-                        <a href="#"><img src="<?php echo $item['item_image'] ?>" alt="product 13" class="img-fluid"></a>
+                        <a href="./product.php?id=<?php echo $item['item_id'] ?>"><img src="<?php echo $item['item_image'] ?>" alt="product 13" class="img-fluid"></a>
                         <div class="text-center">
                         <h6><?php echo $item['item_name'] ?></h6>
                         <div class="rating text-warning font-size-12">

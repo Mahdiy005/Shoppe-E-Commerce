@@ -6,7 +6,7 @@
     <?php foreach($items as $item): ?>
         <div class="item">
             <div class="product font-rale">
-            <a href="#"><img src="<?php echo $item['item_image'] ?? '../assets/products/1.png' ?>" alt="product 1" class="img-fluid"></a>
+            <a href="./product.php?id=<?php echo $item['item_id'] ?>"><img src="<?php echo $item['item_image'] ?? '../assets/products/1.png' ?>" alt="product 1" class="img-fluid"></a>
             <div class="text-center">
                 <h6><?php echo $item['item_name'] ?? 'Unknown' ?></h6>
                 <div class="rating text-warning font-size-12">
